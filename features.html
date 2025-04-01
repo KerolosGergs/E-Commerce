@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="css/features.css">
+</head>
+<body>
+
+
+
+    
+       
+    <div class="cart-container">
+            <div class="cart-items">
+                <nav>
+                    <a href="index.html">Home</a> > <span>Shopping Cart</span>
+                </nav>
+                <div class="table-container ">
+                    <table class="cart-table">
+                        <thead>
+                            <tr>
+                                <th>Product</th>
+                                <th>Price</th>
+                                <th>Quantity</th>
+                                <th>Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <div class="cartItem">
+                                    <td >
+                                        <div class="product">
+                                            <img src="" alt="Fresh Strawberries">          
+                                            <span>Fresh Strawberries</span>
+                                        </div>
+        
+                                    </td>
+                                    <td>$36.00</td>
+                                    <td >
+                                        <div class="quantity-control">
+                                            <button>-</button>
+                                            <input type="text" value="1">
+                                            <button>+</button>
+                                        </div>
+              
+                                    </td>
+                                    <td>$36.00</td>
+                                </div>
+                            </tr>
+                            <tr>
+                                <div class="cartItem">
+                                    <td >
+                                        <div class="product">
+                                            <img src="" alt="Fresh Strawberries">
+                                            <span>Fresh Strawberries</span>
+                                        </div>
+        
+                                    </td>
+                                    <td>$36.00</td>
+                                    <td >
+                                        <div class="quantity-control">
+                                            <button>-</button>
+                                            <input type="text" value="1">
+                                            <button>+</button>
+                                        </div>
+              
+                                    </td>
+                                    <td>$36.00</td>
+                                </div>
+                            </tr>
+                         
+                        </tbody>
+                    </table>
+                </div>
+                <div class="cart-actions">
+                    <div>
+                        <input type="text" placeholder="Coupon Code">
+                        <button class="apply-coupon btn">Apply Coupon</button>
+                    </div>
+                    <button class="update-cart btn">Update Cart</button>
+                </div>
+
+    
+    
+            </div>
+    
+            <div class="cart-summary">
+                <h2>Cart Totals</h2>
+                <p>Subtotal: <span>$79.65</span></p><hr>
+                <div class="shipping">
+                    <div>Shipping:</div>
+                    <div>
+                        <p>There are no shipping methods available. Please double check your address, or contact us if you need any help.</p>
+                        <h3>Calculate Shipping</h3>
+                        <select>
+                            <option>Select a country...</option>
+                        </select>
+                        <input type="text" placeholder="State / Country">
+                        <input type="text" placeholder="Postcode / Zip">
+                        <button class="btn">Update Totals</button>
+                    </div>
+                    
+                </div>
+                <hr>
+                
+    
+                <p class="total">Total: <span>$79.65</span></p>
+                <button class="checkout">Proceed to Checkout</button>
+            </div>
+        </div>
+    <script type="module" src="js/features.js"></script>
+</body>
+</html>

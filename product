@@ -1,0 +1,100 @@
+ <div class="product-card">
+              <span class="product-badge">Sale</span>
+              <button class="favorite-btn">
+                  <i class="far fa-heart"></i>
+              </button>
+              <img src="https://images.unsplash.com/photo-1581044777550-4cfa60707c03?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Floral Dress" class="product-img">
+              <div class="product-info">
+                  <h3 class="product-title">Floral Summer Dress</h3>
+                  <span class="product-category">Women • Dresses</span>
+                  <div class="product-price">
+                      <span class="current-price">$59.99</span>
+                      <span class="original-price">$89.99</span>
+                  </div>
+                  <button class="add-to-cart">
+                      <i class="fas fa-shopping-cart"></i>
+                      Add to Cart
+                  </button>
+              </div>
+          </div>
+          
+          <!-- Product 2 -->
+          <div class="product-card">
+              <button class="favorite-btn active">
+                  <i class="fas fa-heart"></i>
+              </button>
+              <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Linen Shirt" class="product-img">
+              <div class="product-info">
+                  <h3 class="product-title">Casual Linen Shirt</h3>
+                  <span class="product-category">Men • Shirts</span>
+                  <div class="product-price">
+                      <span class="current-price">$39.99</span>
+                  </div>
+                  <button class="add-to-cart">
+                      <i class="fas fa-shopping-cart"></i>
+                      Add to Cart
+                  </button>
+              </div>
+          </div>
+          
+          <!-- Product 3 -->
+          <div class="product-card">
+              <span class="product-badge">New</span>
+              <button class="favorite-btn">
+                  <i class="far fa-heart"></i>
+              </button>
+              <img src="https://images.unsplash.com/photo-1543076447-215ad9ba6923?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="High Waist Jeans" class="product-img">
+              <div class="product-info">
+                  <h3 class="product-title">High Waist Skinny Jeans</h3>
+                  <span class="product-category">Women • Pants</span>
+                  <div class="product-price">
+                      <span class="current-price">$69.99</span>
+                  </div>
+                  <button class="add-to-cart">
+                      <i class="fas fa-shopping-cart"></i>
+                      Add to Cart
+                  </button>
+              </div>
+          </div>
+          
+          <!-- Product 4 -->
+          <div class="product-card">
+              <button class="favorite-btn">
+                  <i class="far fa-heart"></i>
+              </button>
+              <img src="https://images.unsplash.com/photo-1529374255404-311a2a4f1fd9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Denim Jacket" class="product-img">
+              <div class="product-info">
+                  <h3 class="product-title">Classic Denim Jacket</h3>
+                  <span class="product-category">Men • Outerwear</span>
+                  <div class="product-price">
+                      <span class="current-price">$79.99</span>
+                      <span class="original-price">$99.99</span>
+                  </div>
+                  <button class="add-to-cart">
+                      <i class="fas fa-shopping-cart"></i>
+                      Add to Cart
+                  </button>
+              </div>
+          </div>
+          
+       
+          <!-- Product 6 -->
+          <div class="product-card">
+              <button class="favorite-btn">
+                  <i class="far fa-heart"></i>
+              </button>
+              <img src="https://images.unsplash.com/photo-1527719327859-c6ce80353573?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Slim Fit Suit" class="product-img">
+              <div class="product-info">
+                  <h3 class="product-title">Slim Fit Business Suit</h3>
+                  <span class="product-category">Men • Suits</span>
+                  <div class="product-price">
+                      <span class="current-price">$249.99</span>
+                      <span class="original-price">$299.99</span>
+                  </div>
+                  <button class="add-to-cart">
+                      <i class="fas fa-shopping-cart"></i>
+                      Add to Cart
+                  </button>
+              </div>
+          </div>
+        </div>

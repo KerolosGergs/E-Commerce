@@ -1,22 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-     <!-- Normlize -->
-     <link rel="stylesheet" href="css/norm.css">
-     <!-- Font Icon -->
-     <link rel="stylesheet" href="css/all.min.css">
-     <!-- My styles -->
-     <!-- <link rel="stylesheet" href="css/"> -->
-     <!-- Google-font- -->
-     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
-        rel="stylesheet">
-</head>
-<body>
-    
-</body>
+    <!-- Normlize -->
+    <link rel="stylesheet" href="css/norm.css" />
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="css/all.min.css" />
+    <!-- My styles -->
+    <link rel="stylesheet" href="css/home.css" />
+    <!--Text Styles  -->
+    <link rel="stylesheet" href="css/text.css" />
+    <!-- Google-font- -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Animation css -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
+    <script defer type="module" src="js/home.js"></script>
+  </head>
+  <body>
+    <!-- start carousel -->
+    <div class="slideshow-container">
+      <div class="mySlides fade">
+        <img src="images/New folder/5.png" style="width: 100%" />
+        <div class="text1">
+          <p class="animate__fadeInRight">Wimen Collection 2025</p>
+          <h3 class="animate__wobble">NEW ARRIVALS</h3>
+          <button class="custom-btn btn-5 animate__heartBeat">
+            <span>SHOP NOW</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="mySlides fade">
+        <img src="images/New folder/2.png" style="width: 100%" />
+        <div class="text2">
+          <p class="animate__rollIn">Men Collection 2025</p>
+          <h3 class="animate__slideInLeft">NEW ARRIVALS</h3>
+          <button class="animate__zoomInUp custom-btn btn-10">SHOP NOW</button>
+        </div>
+      </div>
+
+      <div class="mySlides fade">
+        <img src="images/New folder/3.png" style="width: 100%" />
+        <div class="text3">
+          <p class="animate__jackInTheBox">Women Collection 2025</p>
+          <h3 class="animate__flipInY">NEW ARRIVALS</h3>
+          <button class="animate__zoomInLeft custom-btn btn-14">
+            SHOP NOW
+          </button>
+        </div>
+      </div>
+
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <br />
+
+    <div style="text-align: center">
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+    <!-- End   carousel -->
+
+    <!-- Strat cards  -->
+
+    <section class="cards">
+      <div class="container">
+        <div class="wraper-cards">
+          <!-- Women's Card 1 -->
+          <div class="card">
+            <img
+              src="https://images.unsplash.com/photo-1581044777550-4cfa60707c03?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+              alt="Women's Dress"
+              class="card-img"
+            />
+            <div class="card-content">
+              <h3 class="card-title">Floral Summer Dress</h3>
+              <p class="card-category">Dresses</p>
+              <p class="card-price">
+                <span class="original-price">$89.99</span>
+              
+              </p>
+            </div>
+            <div class="card-overlay">
+              <h3 class="overlay-title">Floral Summer Dress</h3>
+              <p class="overlay-price">$69.99</p>
+              <a href="#" class="buy-now">Buy Now</a>
+            </div>
+          </div>
+
+          <!-- Men's Card 1 -->
+          <div class="card">
+            <img
+              src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+              alt="Men's Shirt"
+              class="card-img"
+            />
+            <div class="card-content">
+              <h3 class="card-title">Casual Linen Shirt</h3>
+              <p class="card-category">Shirts</p>
+              <p class="card-price">
+                <span class="original-price">$49.99</span>
+  
+              </p>
+            </div>
+            <div class="card-overlay">
+              <h3 class="overlay-title">Casual Linen Shirt</h3>
+              <p class="overlay-price">$29.99</p>
+              <a href="#" class="buy-now">Buy Now</a>
+            </div>
+          </div>
+
+          <!-- Women's Card 2 -->
+          <div class="card">
+            <img
+              src="https://images.unsplash.com/photo-1543076447-215ad9ba6923?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+              alt="Women's Jeans"
+              class="card-img"
+            />
+            <div class="card-content">
+              <h3 class="card-title">High Waist Jeans</h3>
+              <p class="card-category">Pants</p>
+              <p class="card-price">$69.99</p>
+            </div>
+            <div class="card-overlay">
+              <h3 class="overlay-title">High Waist Jeans</h3>
+              <p class="overlay-price">$69.99</p>
+              <a href="#" class="buy-now">Buy Now</a>
+            </div>
+          </div>
+
+          <!-- Men's Card 2 -->
+          <div class="card">
+            <img
+              src="https://images.unsplash.com/photo-1529374255404-311a2a4f1fd9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+              alt="Men's Jacket"
+              class="card-img"
+            />
+            <div class="card-content">
+              <h3 class="card-title">Denim Jacket</h3>
+              <p class="card-category">Outerwear</p>
+              <p class="card-price">$79.99</p>
+            </div>
+            <div class="card-overlay">
+              <h3 class="overlay-title">Denim Jacket</h3>
+              <p class="overlay-price">$79.99</p>
+              <a href="#" class="buy-now">Buy Now</a>
+            </div>
+          </div>
+
+        
+
+        
+        </div>
+      </div>
+    </section>
+
+    <!-- End cards -->
+    <!-- Main -->
+     <section>
+    <div class="container">
+      <div class="page-header">
+          <h1 class="page-title">Our Collection</h1>
+          <p>Discover the latest trends in fashion</p>
+      </div>
+      
+      <div class="product-controls">
+          <div id="categories" class="categories">
+              <!-- <button class="category-btn active">All</button>
+              <button class="category-btn">Women</button>
+              <button class="category-btn">Men</button>
+              <button class="category-btn">Accessories</button> -->
+          </div>
+          
+          <div class="search-filter">
+              <div class="search-box">
+                  <i class="fas fa-search"></i>
+                  <input type="text" placeholder="Search products...">
+              </div>
+              <button class="filter-btn">
+                  <i class="fas fa-filter"></i>
+                  Filters
+              </button>
+          </div>
+        </div>
+      
+      <div id="product-grid" class="product-grid">
+        </div>
+</section>
+<button class="load-more" id="loadMore">Load More</button>
+
+<!-- ENd Main -->
+
+
+
+
+
+  </body>
 </html>
