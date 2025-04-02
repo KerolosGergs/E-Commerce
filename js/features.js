@@ -1,4 +1,4 @@
-import { cart, deleteCartItem } from "../data/cart.js";
+import { cart, deleteCartItem,calculateTotalPrice,saveChanges} from "../data/cart.js";
 import { calculateProductPrice } from "./utils/featuresUtils.js";
 
 function displayCartItems() {
@@ -36,6 +36,7 @@ function displayCartItems() {
             let productId = img.dataset.productId;
             deleteCartItem(productId);
             document.querySelector(`.js-product-${productId}`).remove();
+            displayTotalPrice();
         });
     });
 
@@ -45,7 +46,7 @@ function displayCartItems() {
             let quantityInput = document.querySelector(`.js-cart-quantity-${productId}`);
             let newQuantity = Math.max(1, parseInt(quantityInput.value) - 1);
             quantityInput.value = newQuantity;
-            updateTotalPrice(productId);
+            updateItemTotalPrice(productId);
         });
     });
 
@@ -54,13 +55,13 @@ function displayCartItems() {
             let productId = increaseBtn.dataset.productId;
             let quantityInput = document.querySelector(`.js-cart-quantity-${productId}`);
             quantityInput.value = parseInt(quantityInput.value) + 1;
-            updateTotalPrice(productId);
+            updateItemTotalPrice(productId);
         });
     });
 }
 
 // Function to update total price when quantity changes
-function updateTotalPrice(productId) {
+function updateItemTotalPrice(productId) {
     let item = cart.find(product => product.id == productId);
     let quantityInput = document.querySelector(`.js-cart-quantity-${productId}`);
     let newQuantity = parseInt(quantityInput.value);
@@ -70,3 +71,25 @@ function updateTotalPrice(productId) {
 
 // Ensure displayCartItems runs only after the DOM is loaded
 document.addEventListener('DOMContentLoaded', displayCartItems);
+document.addEventListener('DOMContentLoaded', displayTotalPrice);
+
+
+function displayTotalPrice(){
+    document.querySelector('.subtotal-price').textContent = `$${calculateTotalPrice().toFixed(2)}`;
+    document.querySelector('.total-price').textContent = `$${calculateTotalPrice().toFixed(2)}`;
+}
+
+
+document.querySelector('.update-cart').addEventListener('click',function(){
+    cart.forEach(cartItem =>{
+        let newQuantity = Number(document.querySelector(`.js-cart-quantity-${cartItem.id}`).value)
+        if(!isNaN(newQuantity)&&(newQuantity<=50 && newQuantity >0)){
+            cartItem.quantity =newQuantity;
+            saveChanges();
+            displayTotalPrice();
+        }
+        else{
+            alert("Please Enter Number From 1 to 50!")   
+        }
+    })
+})

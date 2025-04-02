@@ -39,3 +39,14 @@ export function deleteCartItem(productId){
 
   console.log(cart);
 }
+
+
+export function calculateTotalPrice(){
+  let total =0;
+    cart.forEach((cartItem)=>{
+      total+=(cartItem.price * cartItem.quantity)
+    })
+    return total;
+}
+
+
