@@ -79,9 +79,30 @@ nav span {
 }
 
 
-.product img:hover{
-    filter: brightness(0.5) sepia(1) hue-rotate(180deg);
-}
+.image-container {
+    position: relative;
+    width: 90px;
+  }
+  
+.overlay-hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80px;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    opacity: 0;
+    transition: opacity 0.3s;
+    cursor: pointer;
+  }
+  
+  .image-container:hover .overlay-hover {
+    opacity: 1;
+  }
 .product img {
     width: 80px;
     margin-right: 15px;
