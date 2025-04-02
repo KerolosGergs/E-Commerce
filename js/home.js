@@ -1,18 +1,25 @@
 import { cart ,addToCard} from "../data/cart.js";
-
+import {getCategory ,getProducts}from"../data/products.js";
+import { showAlert } from "./alert.js";
 
 let slideIndex = 1;
 showSlides(slideIndex);
 
 // Next/previous controls
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
 
-// Thumbnail image controls
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
+document.getElementsByClassName('prev')[0].addEventListener('click', function() {
+  showSlides(slideIndex-=1);
+});
+document.getElementsByClassName('next')[0].addEventListener('click', function() {
+  showSlides(slideIndex+=1);
+})
+
+Array.from(document.getElementsByClassName('dot')).forEach((dot, index) => {
+  dot.addEventListener('click', function() {
+    showSlides(slideIndex = index + 1);
+  });
+});
+
 
 function showSlides(n) {
   let i;
@@ -33,92 +40,54 @@ function showSlides(n) {
 
 
 
-// Favourite button 
 
-document.querySelectorAll('.favorite-btn').forEach(button => {
-  button.addEventListener('click', function() {
-      this.classList.toggle('active');
-      const icon = this.querySelector('i');
-      if (this.classList.contains('active')) {
-          icon.classList.replace('far', 'fas');
-      } else {
-          icon.classList.replace('fas', 'far');
-      }
+// Favourite button to Card 
+export function addFavouriteBtn(){
+  document.querySelectorAll('.favorite-btn').forEach(button => {
+    button.addEventListener('click', function() {
+        this.classList.toggle('active');
+        const icon = this.querySelector('i');
+        if (this.classList.contains('active')) {
+            icon.classList.replace('far', 'fas');
+        } else {
+            icon.classList.replace('fas', 'far');
+        }
+    });
   });
-});
+}
 
 
-async function getCategory() {
-try{
-  let response = await fetch('https://dummyjson.com/products/categories')
-  if (!response.ok) {
-    throw new Error(`Response status: ${response.status}`);
-  }
-
-  let json = await response.json();
-  let categories= document.getElementById('categories');
-
-  let button1 =  document.createElement('button');
-  button1.textContent='All';
-  button1.classList.add('category-btn');
-  button1.classList.add('active');  
-  button1.addEventListener('click', function() {
+// Categories active to Button on click
+export function addActiveClass(){
+  document.querySelectorAll('.category-btn').forEach(button => button.addEventListener('click', function() {
     let productGrid = document.getElementById('product-grid');
     productGrid.innerHTML = '';
-    //to Make it active
     document.querySelectorAll('.category-btn').forEach(btn => {
       btn.classList.remove('active');
   });
   this.classList.add('active');
     getProducts('All');
-  })
-  categories.appendChild(button1);
-  console.log(json);
-  json.forEach(element => {
-    let button =  document.createElement('button');
-    button.textContent=element.name;
-    button.classList.add('category-btn');
-    
-    button.addEventListener('click', function() {
-      let productGrid = document.getElementById('product-grid');
-      productGrid.innerHTML = '';
-      document.querySelectorAll('.category-btn').forEach(btn => {
-        btn.classList.remove('active');
-    });
-    this.classList.add('active');
-      getProducts(element.name);
-
-    })
-    categories.appendChild(button);
-
-
-
-  });
-
-}catch(er){
-  console.error(error.message);
-}
+  }));
 }
 
-async function getProducts(category) {
+
+
+
+
+export function addCategoryBtn(element){
+
+  let categories= document.getElementById('categories');
+  let button =  document.createElement('button');
+  button.textContent=element.name;
+  button.classList.add('category-btn');
   
-try{
-  let response;
-  if(category==='All'||category===undefined){
-     response = await fetch('https://dummyjson.com/products')
-  }else{
-     response = await fetch(`https://dummyjson.com/products/category/${category}`)
-  }
+ 
+  categories.appendChild(button);
+}
 
-  if (!response.ok) {
-    throw new Error(`Response status: ${response.status}`);
-  }
-  let json = await response.json();
-  let data = await json.products;
+export function addcard(element){
   let productGrid = document.getElementById('product-grid');
-  console.log(data);
-  data.forEach(element => {
-
+  
     let card = document.createElement('div');
     card.classList.add('product-card')
 
@@ -152,7 +121,12 @@ try{
     Type.textContent=element.category.name;
     info.appendChild(Type);
 
-    ///add to info
+    // add to info priceQuantity
+    let priceQuantity = document.createElement('div');
+    priceQuantity.classList.add('price-quantity');
+
+
+    ///add to priceQuantity  (Product Price)
     let price = document.createElement('div');
     price.classList.add('product-price');
 
@@ -161,22 +135,66 @@ try{
     CurrPrice.textContent='$'+ element.price;
     price.appendChild(CurrPrice);
 
-    let OrgPrice = document.createElement('span');
-    OrgPrice.classList.add('original-price');
-    OrgPrice.textContent='$' + +element.price+.10 * +element.price ;
-    price.appendChild(OrgPrice);
+    // add to info Quantity Selector
+    let quantity = document.createElement('div');
+    quantity.classList.add('quantity-selector');
 
-    info.appendChild(price);
+    let minus = document.createElement('button');
+    minus.textContent='-';
+    minus.classList.add('quantity-btn');
+    minus.classList.add('minus');
+    
+
+    let input = document.createElement('input');
+    input.classList.add('quantity-input');
+    input.setAttribute('type','number');
+    input.setAttribute('value','1');
+    input.setAttribute('min','1');
+    input.setAttribute('value-by-id',element.id);
+
+    let plus = document.createElement('button');
+    plus.textContent='+';
+    plus.classList.add('quantity-btn');
+    plus.classList.add('plus')
+
+    quantity.appendChild(minus);
+    quantity.appendChild(input);
+    quantity.appendChild(plus);
+
+    priceQuantity.appendChild(price);
+    priceQuantity.appendChild(quantity);
+    info.appendChild(priceQuantity);
+
+
+    minus.addEventListener('click',function() {
+      if (input.value > 1) {
+        input.value  -= 1;
+    }
+    })
+
+    plus.addEventListener('click',function() {
+      +input.value ++;
+    })
+    input.addEventListener('input',function() {
+      if (isNaN(+input.value) || +input.value < 1) {
+        input.value = 1;
+    }
+    })
 
     // add to info 
     let cart = document.createElement('button')
     cart.classList.add('add-to-cart');
     cart.classList.add('js-add-to-cart');
-    cart.setAttribute('data-product-id',`${element.id}`)
+    cart.setAttribute('id',`${element.id}`)
     let cartIcon = document.createElement('i');
     cartIcon.classList.add('fas');
     cartIcon.classList.add('fa-shopping-cart');
-
+    cart.addEventListener('click',function() {
+      debugger
+      addToCard(element,input.value);
+      input.value=1
+      showAlert();
+    });
 
     cart.appendChild(cartIcon);
     cart.textContent='Add to Cart';
@@ -184,28 +202,20 @@ try{
 
     card.appendChild(info);
     productGrid.appendChild(card);
-  })
-
-  document.querySelectorAll('.js-add-to-cart').forEach((cartBtn)=>{
-    cartBtn.addEventListener('click',function(){
-      let productId =cartBtn.dataset.productId;
-      // console.log(`${productId}`);
-
-      data.forEach((element)=>{
-        if(element.id == productId){
-          addToCard(element);
-        }
-      })
-      console.log(cart);
-    })
-  })
-}catch(er){
-  console.log(er);
+  
 }
-};
+
+
+
+
+
 
 
 
 
 getCategory();
 getProducts();
+
+
+
+

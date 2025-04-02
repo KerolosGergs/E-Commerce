@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <!-- Alert -->
+    <link rel="stylesheet" href="css/alert.css">
     <!-- Normlize -->
     <link rel="stylesheet" href="css/norm.css" />
     <!-- Font Icon -->
@@ -67,10 +69,13 @@
     <br />
 
     <div style="text-align: center">
-      <span class="dot" onclick="currentSlide(1)"></span>
-      <span class="dot" onclick="currentSlide(2)"></span>
-      <span class="dot" onclick="currentSlide(3)"></span>
+      <span class="dot" ></span>
+      <span class="dot" ></span>
+      <span class="dot" ></span>
     </div>
+    <!-- End   carousel -->
+
+
     <!-- End   carousel -->
 
     <!-- Strat cards  -->
@@ -78,7 +83,6 @@
     <section class="cards">
       <div class="container">
         <div class="wraper-cards">
-          <!-- Women's Card 1 -->
           <div class="card">
             <img
               src="https://images.unsplash.com/photo-1581044777550-4cfa60707c03?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
@@ -100,7 +104,6 @@
             </div>
           </div>
 
-          <!-- Men's Card 1 -->
           <div class="card">
             <img
               src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
@@ -122,7 +125,6 @@
             </div>
           </div>
 
-          <!-- Women's Card 2 -->
           <div class="card">
             <img
               src="https://images.unsplash.com/photo-1543076447-215ad9ba6923?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
@@ -178,10 +180,8 @@
       
       <div class="product-controls">
           <div id="categories" class="categories">
-              <!-- <button class="category-btn active">All</button>
-              <button class="category-btn">Women</button>
-              <button class="category-btn">Men</button>
-              <button class="category-btn">Accessories</button> -->
+              <button class="category-btn active">All</button>
+              
           </div>
           
           <div class="search-filter">
@@ -206,6 +206,8 @@
 
 
 
-
+<div id="success-alert" class="alert glass hidden">
+  ✅ Product added successfully!
+</div>
   </body>
 </html>

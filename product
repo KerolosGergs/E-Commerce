@@ -9,8 +9,12 @@
                   <span class="product-category">Women • Dresses</span>
                   <div class="product-price">
                       <span class="current-price">$59.99</span>
-                      <span class="original-price">$89.99</span>
                   </div>
+                  <div class="quantity-selector">
+                    <button class="quantity-btn minus">-</button>
+                    <input type="number" class="quantity-input" value="1" min="1">
+                    <button class="quantity-btn plus">+</button>
+                </div>
                   <button class="add-to-cart">
                       <i class="fas fa-shopping-cart"></i>
                       Add to Cart
