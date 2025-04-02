@@ -1,4 +1,4 @@
-import {addActiveClass,addCategoryBtn,addFavouriteBtn,addcard,addToCartFunc ,addQuantitySelector}  from '../js/home.js';
+import {addActiveClass,addCategoryBtn,addFavouriteBtn,addcard}  from '../js/home.js';
 
 
 export async function getCategory() {
@@ -41,8 +41,7 @@ export async function getCategory() {
         addcard(element);
       });
       addFavouriteBtn();
-      addQuantitySelector();
-      addToCartFunc(data);
+
      
     }catch(er){
       console.log(er);

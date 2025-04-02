@@ -1,5 +1,6 @@
 import { cart ,addToCard} from "../data/cart.js";
 import {getCategory ,getProducts}from"../data/products.js";
+import { showAlert } from "./alert.js";
 
 let slideIndex = 1;
 showSlides(slideIndex);
@@ -69,21 +70,7 @@ export function addActiveClass(){
   }));
 }
 
-export function addToCartFunc(data){
-  document.querySelectorAll('.js-add-to-cart').forEach((cartBtn)=>{
-    cartBtn.addEventListener('click',function(){
-      let productId =cartBtn.id;
-      let quantity = document.querySelector(`[value-by-id="${productId}"]`).value;
-      
-      data.forEach((element)=>{
-        if(element.id == productId){
-          addToCard(element,quantity);
-        }
-      })
-      console.log(cart);
-    })
-  })
-}
+
 
 
 
@@ -155,7 +142,8 @@ export function addcard(element){
     let minus = document.createElement('button');
     minus.textContent='-';
     minus.classList.add('quantity-btn');
-    minus.classList.add('minus')
+    minus.classList.add('minus');
+    
 
     let input = document.createElement('input');
     input.classList.add('quantity-input');
@@ -178,6 +166,21 @@ export function addcard(element){
     info.appendChild(priceQuantity);
 
 
+    minus.addEventListener('click',function() {
+      if (input.value > 1) {
+        input.value  -= 1;
+    }
+    })
+
+    plus.addEventListener('click',function() {
+      +input.value ++;
+    })
+    input.addEventListener('input',function() {
+      if (isNaN(+input.value) || +input.value < 1) {
+        input.value = 1;
+    }
+    })
+
     // add to info 
     let cart = document.createElement('button')
     cart.classList.add('add-to-cart');
@@ -186,7 +189,12 @@ export function addcard(element){
     let cartIcon = document.createElement('i');
     cartIcon.classList.add('fas');
     cartIcon.classList.add('fa-shopping-cart');
-
+    cart.addEventListener('click',function() {
+      debugger
+      addToCard(element,input.value);
+      input.value=1
+      showAlert();
+    });
 
     cart.appendChild(cartIcon);
     cart.textContent='Add to Cart';
@@ -198,31 +206,6 @@ export function addcard(element){
 }
 
 
-export function addQuantitySelector() {
- Array.from(document.getElementsByClassName('quantity-selector')).forEach(QuantitySelector => {
-  let quantityInput = QuantitySelector.getElementsByClassName('quantity-input')[0];
-  QuantitySelector.querySelector('.quantity-btn.minus').addEventListener('click', () => {
-    let value = parseInt(quantityInput.value);
-    if (value > 1) {
-        quantityInput.value = value - 1;
-    }
-});
-
-QuantitySelector.querySelector('.quantity-btn.plus').addEventListener('click', () => {
-    let value = parseInt(quantityInput.value);
-    quantityInput.value = value + 1;
-});
-
-QuantitySelector.querySelector('.quantity-input').addEventListener('input', () => {
-    let value = parseInt(quantityInput.value);
-    if (isNaN(value) || value < 1) {
-        quantityInput.value = 1;
-    }
-});
- })
-  
-}
- 
 
 
 
@@ -232,3 +215,7 @@ QuantitySelector.querySelector('.quantity-input').addEventListener('input', () =
 
 getCategory();
 getProducts();
+
+
+
+
