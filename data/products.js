@@ -1,50 +1,95 @@
 import {addActiveClass,addCategoryBtn,addFavouriteBtn,addcard}  from '../js/home.js';
+import { showloading ,Hideloading } from '../js/components.js';
+
+let categories ={
+  data:null,
+  timestamp:0
+} ;
+let products ={
+  data:null,
+  timestamp:0
+};
+
+async function fetchCategory(){
+  const now = Date.now();
+  const expiryTime = 5 * 60 * 1000; // 5 minutes
+  if (categories.data && now - categories.timestamp < expiryTime) {
+    return categories.data;
+  }
+  try{
+  let response = await fetch('https://dummyjson.com/products/categories');
+  if (!response.ok) {
+    throw new Error(`Response status: ${response.status}`);
+  }
+  let json = await response.json();
+  categories= {
+    data: json,
+    timestamp: now
+
+  }
+  return json;
+  }catch(er){
+    console.log(er);
+  }
+
+}
+
 
 
 export async function getCategory() {
   
-    try{
-      let response = await fetch('https://dummyjson.com/products/categories')
-      if (!response.ok) {
-        throw new Error(`Response status: ${response.status}`);
-      }
-      let json = await response.json();
+      let json = await fetchCategory();
       json.forEach(element => {
         addCategoryBtn(element);
       });
       addActiveClass();
-    
-    }catch(er){
-      console.error(error.message);
-    }
     }
     
+
+
+async function fetchProducts(){
+  const now = Date.now();
+  const expiryTime = 5 * 60 * 1000; // 5 minutes
+  if (products.data && now - products.timestamp < expiryTime) {
+    return products.data;
+  }
+  try{
+  let response = await fetch('https://dummyjson.com/products');
+  if (!response.ok) {
+    throw new Error(`Response status: ${response.status}`);
+  }
+  let json = await response.json();
+  json = json.products;
+  products= {
+    data: json,
+    timestamp: now
+
+  }
+  return json;
+  }catch(er){
+    console.log(er);
+  }
+}
     
  export   async function getProducts(category) {
-      
-    try{
-      let response;
-      if(category==='All'||category===undefined){
-         response = await fetch('https://dummyjson.com/products')
-      }else{
-         response = await fetch(`https://dummyjson.com/products/category/${category}`)
-      }
-    
-      if (!response.ok) {
-        throw new Error(`Response status: ${response.status}`);
-      }
-      let json = await response.json();
-      let data = await json.products;
+  document.getElementById('product-grid').innerHTML = '';
+  showloading();
     
     
-      data.forEach(element => {
+    let data = await fetchProducts();
+    if(data.length!=0){
+      Hideloading();
+    }
+    if(category === 'All' || category === undefined){data = await fetchProducts();}
+    else{
+      data = data.filter(element => element.category === category.toLowerCase());
+
+    }
+    data.forEach(element => {
         addcard(element);
       });
       addFavouriteBtn();
 
      
-    }catch(er){
-      console.log(er);
-    }
-    };
+ };
     
