@@ -73,10 +73,11 @@ function updateItemTotalPrice(productId) {
 document.addEventListener('DOMContentLoaded', displayCartItems);
 document.addEventListener('DOMContentLoaded', displayTotalPrice);
 
-
+let total =0;
 function displayTotalPrice(){
-    document.querySelector('.subtotal-price').textContent = `$${calculateTotalPrice().toFixed(2)}`;
-    document.querySelector('.total-price').textContent = `$${calculateTotalPrice().toFixed(2)}`;
+    total=calculateTotalPrice();
+    document.querySelector('.subtotal-price').textContent = `$${total.toFixed(2)}`;
+    document.querySelector('.total-price').textContent = `$${total.toFixed(2)}`;
 }
 
 
@@ -92,4 +93,24 @@ document.querySelector('.update-cart').addEventListener('click',function(){
             alert("Please Enter Number From 1 to 50!")   
         }
     })
+})
+
+let couponCodes = ['amr10','rashed15']
+localStorage.setItem('couponCodes',JSON.stringify(couponCodes))
+
+document.querySelector('.apply-coupon').addEventListener('click',function(){
+    let inputCode = document.querySelector('.input-coupon').value;
+    let vaildCoupon = couponCodes.find(coupon => coupon === inputCode);
+    total = calculateTotalPrice();
+    if(vaildCoupon&&total>0){
+            total = total - total*Number(inputCode.slice(-2))/100;
+            document.querySelector('.subtotal-price').textContent = `$${total.toFixed(2)}`;
+            document.querySelector('.total-price').textContent = `$${total.toFixed(2)}`;
+            document.querySelector('.coupon-error').style.display = `none`;
+
+    }
+    else{
+        document.querySelector('.coupon-error').style.display = `block`;
+    }
+    
 })

@@ -77,40 +77,51 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="cart-actions">
-                    <div>
-                        <input type="text" placeholder="Coupon Code">
-                        <button class="apply-coupon btn">Apply Coupon</button>
+                <div class="cart-actions-container">
+                    <div class="cart-actions">
+                        <div>
+                            <input class="input-coupon" type="text" placeholder="Coupon Code">
+                            <button class="apply-coupon btn">Apply Coupon</button>
+                        </div>
+                        <button class="update-cart btn">Update Cart</button>
                     </div>
-                    <button class="update-cart btn">Update Cart</button>
+                    <p class="coupon-error">Invalid Coupon!</p>
                 </div>
+     
 
     
     
             </div>
     
             <div class="cart-summary">
-                <h2>Cart Totals</h2>
-                <p>Subtotal: <span class="subtotal-price">$0</span></p><hr>
-                <div class="shipping">
-                    <div>Shipping:</div>
-                    <div>
-                        <p>There are no shipping methods available. Please double check your address, or contact us if you need any help.</p>
-                        <h3>Calculate Shipping</h3>
-                        <select>
-                            <option>Select a country...</option>
-                        </select>
-                        <input type="text" placeholder="State / Country">
-                        <input type="text" placeholder="Postcode / Zip">
-                        <button class="btn">Update Totals</button>
+                <form >
+                    <h2>Cart Totals</h2>
+                    <p>Subtotal: <span class="subtotal-price">$0</span></p><hr>
+                    <div class="shipping">
+                        <div>Shipping:</div>
+                        <div>
+                            <p>There are no shipping methods available. Please double check your address, or contact us if you need any help.</p>
+                            <h3>Calculate Shipping</h3>
+                            <select required>
+                                <option>Select a country...</option>
+                                <option>Egypt</option>
+                                <option>Qatar</option>
+                                <option>Saudi Arabia</option>
+                                <option>United Arab Emirates</option>
+                            </select>
+                            <input type="text" placeholder="City" required>
+                            <input type="text" placeholder="Postcode / Zip" required>
+                            <button class="btn">Update Totals</button>
+                        </div>
+                        
                     </div>
+                    <hr>
                     
-                </div>
-                <hr>
-                
-    
-                <p class="total">Total: <span class="total-price">$0</span></p>
-                <button class="checkout">Proceed to Checkout</button>
+        
+                    <p class="total">Total: <span class="total-price">$0</span></p>
+                    <button class="checkout">Proceed to Checkout</button>
+                </form>
+     
             </div>
         </div>
 
