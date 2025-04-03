@@ -4,11 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shopping Cart</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="css/features.css">
+    <link rel="stylesheet" href="css/styles.css">
+
 </head>
 <body>
 
-     
+    <header>
+        <nav class="navbar">
+            <div class="navbar-logo">
+                <a href="home.html"><span class="logo-coza">COZA</span> <span class="logo-store">STORE</span></a>
+            </div>
+            
+            <div class="hamburger-menu">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            
+            <ul class="navbar-links">
+                <li><a href="home.html" >Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li>
+                    <a href="features.html" class="active">Features</a>
+                    <span class="hot-label">HOT</span>
+                </li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            
+            <div class="navbar-icons">
+                <div class="icon-item">
+                    <a href="#" class="search-icon">
+                        <i class="fas fa-search"></i>
+                    </a>
+                </div>
+                <div class="icon-item">
+                    <a href="features.html" class="cart-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="icon-counter">2</span>
+                    </a>
+                </div>
+                <div class="icon-item">
+                    <a href="#" class="heart-icon">
+                        <i class="fas fa-heart"></i>
+                        <span class="icon-counter">0</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
     <div class="cart-container">
             <div class="cart-items">
                 <nav>
@@ -66,6 +113,67 @@
                 <button class="checkout">Proceed to Checkout</button>
             </div>
         </div>
+
+        <footer class="footer">
+            <div class="footer-content">
+                <!-- Categories Section -->
+                <div class="footer-section">
+                    <h3 class="footer-heading">CATEGORIES</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Women</a></li>
+                        <li><a href="#">Men</a></li>
+                        <li><a href="#">Shoes</a></li>
+                        <li><a href="#">Watches</a></li>
+                    </ul>
+                </div>
+    
+                <!-- Help Section -->
+                <div class="footer-section">
+                    <h3 class="footer-heading">HELP</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Track Order</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">Shipping</a></li>
+                        <li><a href="#">FAQs</a></li>
+                    </ul>
+                </div>
+    
+                <!-- Get in Touch Section -->
+                <div class="footer-section">
+                    <h3 class="footer-heading">GET IN TOUCH</h3>
+                    <p class="contact-info">
+                        Any questions? Let us know in store at 8th floor, 379 Hudson St, New York, NY 10018 or call us on (1) 96 716 6879
+                    </p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-pinterest-p"></i></a>
+                    </div>
+                </div>
+    
+                <!-- Newsletter Section -->
+                <div class="footer-section">
+                    <h3 class="footer-heading">NEWSLETTER</h3>
+                    <div class="newsletter-form">
+                        <input type="email" placeholder="email@example.com" class="newsletter-input">
+                        <button class="subscribe-btn">SUBSCRIBE</button>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Payment Methods -->
+            <div class="payment-methods">
+                <img src="https://cdn.iconscout.com/icon/free/png-256/free-paypal-44-432491.png" alt="PayPal" class="payment-icon">
+                <img src="https://cdn.iconscout.com/icon/free/png-256/free-visa-3-226460.png" alt="Visa" class="payment-icon">
+                <img src="https://cdn.iconscout.com/icon/free/png-256/free-mastercard-3-226462.png" alt="Mastercard" class="payment-icon">
+                <img src="https://cdn.iconscout.com/icon/free/png-256/free-american-express-51-675748.png" alt="American Express" class="payment-icon">
+            </div>
+    
+            <!-- Copyright -->
+            <div class="copyright">
+                <p>Copyright ©2025. All rights reserved | This template is made with <span class="heart">♡</span> by <a href="https://colorlib.com" target="_blank">Colorlib</a></p>
+            </div>
+        </footer>
     <script type="module" src="js/features.js"></script>
 </body>
 </html>

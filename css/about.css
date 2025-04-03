@@ -23,7 +23,9 @@ body {
     justify-content: space-around;
     align-items: center;
 }
-
+.wrapper{
+    margin-bottom: 40px;
+}
 .banner h1 {
     color: #fff;
     font-size: 4rem;
