@@ -13,3 +13,15 @@ export  function showAlert() {
     }, 2000);
   }
 
+
+  export  function showloading() {
+    const loading = document.getElementById("loading");
+    loading.classList.remove("hidden");
+    loading.classList.add("show");
+ 
+  }
+  export  function Hideloading() {
+    const loading = document.getElementById("loading");
+    loading.classList.remove("show");
+    loading.classList.add("hidden");
+  }
