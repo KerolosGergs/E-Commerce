@@ -3,76 +3,188 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <title>About CozaStore</title>
     <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/styles.css">
+
 </head>
 <body>
-    <section class="banner">
-        <h1>About</h1>
 
+    <header>
+        <nav class="navbar">
+            <div class="navbar-logo">
+                <a href="home.html"><span class="logo-coza">COZA</span> <span class="logo-store">STORE</span></a>
+            </div>
+            
+            <div class="hamburger-menu">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            
+            <ul class="navbar-links">
+                <li><a href="home.html" >Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li>
+                    <a href="features.html">Features</a>
+                    <span class="hot-label">HOT</span>
+                </li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            
+            <div class="navbar-icons">
+                <div class="icon-item">
+                    <a href="#" class="search-icon">
+                        <i class="fas fa-search"></i>
+                    </a>
+                </div>
+                <div class="icon-item">
+                    <a href="features.html" class="cart-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="icon-counter">2</span>
+                    </a>
+                </div>
+                <div class="icon-item">
+                    <a href="#" class="heart-icon">
+                        <i class="fas fa-heart"></i>
+                        <span class="icon-counter">0</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+  
+    <section class="wrapper">
+        <section class="banner">
+            <h1>About</h1>
+    
+        </section>
+    
+        <section class="about-content">
+            <div class="container">
+                <div class="text-content">
+                    <h2>Our Story</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris consequat consequat enim, non auctor massa
+                        ultrices non. Morbi sed odio massa. Quisque at vehicula tellus, sed tincidunt augue. Orci varius natoque
+                        penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas varius egestas diam, eu sodales
+                        metus scelerisque congue. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
+                        egestas. Maecenas gravida justo eu arcu egestas convallis. Nullam eu erat bibendum, tempus ipsum eget, dictum
+                        enim. Donec non neque ut enim dapibus tincidunt vitae nec augue. Suspendisse potenti. Proin ut est diam. Donec
+                        condimentum euismod tortor, eget facilisis diam faucibus et. Morbi a tempor elit.
+                    </p>
+                    <p>
+                        Donec gravida lorem elit, quis condimentum ex semper sit amet. Fusce eget ligula magna. Aliquam aliquam
+                        imperdiet sodales. Ut fringilla turpis in vehicula vehicula. Pellentesque congue ac orci ut gravida. Aliquam erat
+                        volutpat. Donec iaculis lectus a arcu facilisis, eu sodales lectus sagittis. Etiam pellentesque, magna vel
+                        dictum rutrum, neque justo eleifend elit, vel tincidunt erat arcu ut sem. Sed rutrum, turpis ut commodo
+                        efficitur, quam velit convallis ipsum, et maximus enim ligula ac ligula.
+                    </p>
+                    <p class="contact-info">
+                        Any questions? Let us know in store at 8th floor, 379 Hudson St, New York, NY 10018 or call us on (+1) 96 716 6879
+                    </p>
+                </div>
+                <div class="image-content">
+                    <img src="images/about/about-01.jpg" alt="Store Image">
+                </div>
+            </div>
+        </section>
+        <section class="sec2">
+            <div class="container">
+                <div class="image-content">
+                    <img src="images/about/about-02.jpg" alt="">
+                </div>
+                <div class="text-content">
+                    <h2>Our Mission </h2>
+    
+                    <p>  Mauris non lacinia magna. Sed nec lobortis dolor. Vestibulum rhoncus dignissim risus,
+                         sed consectetur erat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+                         Nullam maximus mauris sit amet odio convallis, in pharetra magna gravida.
+                         Praesent sed nunc fermentum mi molestie tempor. Morbi vitae viverra odio.
+                         Pellentesque ac velit egestas, luctus arcu non, laoreet mauris.
+                         Sed in ipsum tempor, consequat odio in, porttitor ante.
+                         Ut mauris ligula, volutpat in sodales in, porta non odio.
+                         Pellentesque tempor urna vitae mi vestibulum, nec venenatis nulla lobortis.
+                         Proin at gravida ante. Mauris auctor purus at lacus maximus euismod.
+                         Pellentesque vulputate massa ut nisl hendrerit, eget elementum libero iaculis.
+                    </p>
+                 <p>
+                    Creativity is just connecting things. When you ask creative people how they did something,
+                    they feel a little guilty because they didn't really do it, they just saw something.
+                     It seemed obvious to them after a while.
+            
+                      - Steve Job’s
+                 </p>
+            
+                </div>
+              
+    
+            </div>
+        </section>
     </section>
+    <footer class="footer">
+        <div class="footer-content">
+            <!-- Categories Section -->
+            <div class="footer-section">
+                <h3 class="footer-heading">CATEGORIES</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Women</a></li>
+                    <li><a href="#">Men</a></li>
+                    <li><a href="#">Shoes</a></li>
+                    <li><a href="#">Watches</a></li>
+                </ul>
+            </div>
 
-    <section class="about-content">
-        <div class="container">
-            <div class="text-content">
-                <h2>Our Story</h2>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris consequat consequat enim, non auctor massa
-                    ultrices non. Morbi sed odio massa. Quisque at vehicula tellus, sed tincidunt augue. Orci varius natoque
-                    penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas varius egestas diam, eu sodales
-                    metus scelerisque congue. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
-                    egestas. Maecenas gravida justo eu arcu egestas convallis. Nullam eu erat bibendum, tempus ipsum eget, dictum
-                    enim. Donec non neque ut enim dapibus tincidunt vitae nec augue. Suspendisse potenti. Proin ut est diam. Donec
-                    condimentum euismod tortor, eget facilisis diam faucibus et. Morbi a tempor elit.
-                </p>
-                <p>
-                    Donec gravida lorem elit, quis condimentum ex semper sit amet. Fusce eget ligula magna. Aliquam aliquam
-                    imperdiet sodales. Ut fringilla turpis in vehicula vehicula. Pellentesque congue ac orci ut gravida. Aliquam erat
-                    volutpat. Donec iaculis lectus a arcu facilisis, eu sodales lectus sagittis. Etiam pellentesque, magna vel
-                    dictum rutrum, neque justo eleifend elit, vel tincidunt erat arcu ut sem. Sed rutrum, turpis ut commodo
-                    efficitur, quam velit convallis ipsum, et maximus enim ligula ac ligula.
-                </p>
+            <!-- Help Section -->
+            <div class="footer-section">
+                <h3 class="footer-heading">HELP</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Track Order</a></li>
+                    <li><a href="#">Returns</a></li>
+                    <li><a href="#">Shipping</a></li>
+                    <li><a href="#">FAQs</a></li>
+                </ul>
+            </div>
+
+            <!-- Get in Touch Section -->
+            <div class="footer-section">
+                <h3 class="footer-heading">GET IN TOUCH</h3>
                 <p class="contact-info">
-                    Any questions? Let us know in store at 8th floor, 379 Hudson St, New York, NY 10018 or call us on (+1) 96 716 6879
+                    Any questions? Let us know in store at 8th floor, 379 Hudson St, New York, NY 10018 or call us on (1) 96 716 6879
                 </p>
+                <div class="social-icons">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-pinterest-p"></i></a>
+                </div>
             </div>
-            <div class="image-content">
-                <img src="images/about/about-01.jpg" alt="Store Image">
+
+            <!-- Newsletter Section -->
+            <div class="footer-section">
+                <h3 class="footer-heading">NEWSLETTER</h3>
+                <div class="newsletter-form">
+                    <input type="email" placeholder="email@example.com" class="newsletter-input">
+                    <button class="subscribe-btn">SUBSCRIBE</button>
+                </div>
             </div>
         </div>
-    </section>
-    <section class="sec2">
-        <div class="container">
-            <div class="image-content">
-                <img src="images/about/about-02.jpg" alt="">
-            </div>
-            <div class="text-content">
-                <h2>Our Mission </h2>
 
-                <p>  Mauris non lacinia magna. Sed nec lobortis dolor. Vestibulum rhoncus dignissim risus,
-                     sed consectetur erat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
-                     Nullam maximus mauris sit amet odio convallis, in pharetra magna gravida.
-                     Praesent sed nunc fermentum mi molestie tempor. Morbi vitae viverra odio.
-                     Pellentesque ac velit egestas, luctus arcu non, laoreet mauris.
-                     Sed in ipsum tempor, consequat odio in, porttitor ante.
-                     Ut mauris ligula, volutpat in sodales in, porta non odio.
-                     Pellentesque tempor urna vitae mi vestibulum, nec venenatis nulla lobortis.
-                     Proin at gravida ante. Mauris auctor purus at lacus maximus euismod.
-                     Pellentesque vulputate massa ut nisl hendrerit, eget elementum libero iaculis.
-                </p>
-             <p>
-                Creativity is just connecting things. When you ask creative people how they did something,
-                they feel a little guilty because they didn't really do it, they just saw something.
-                 It seemed obvious to them after a while.
-        
-                  - Steve Job’s
-             </p>
-        
-            </div>
-          
-
+        <!-- Payment Methods -->
+        <div class="payment-methods">
+            <img src="https://cdn.iconscout.com/icon/free/png-256/free-paypal-44-432491.png" alt="PayPal" class="payment-icon">
+            <img src="https://cdn.iconscout.com/icon/free/png-256/free-visa-3-226460.png" alt="Visa" class="payment-icon">
+            <img src="https://cdn.iconscout.com/icon/free/png-256/free-mastercard-3-226462.png" alt="Mastercard" class="payment-icon">
+            <img src="https://cdn.iconscout.com/icon/free/png-256/free-american-express-51-675748.png" alt="American Express" class="payment-icon">
         </div>
-    </section>
+
+        <!-- Copyright -->
+        <div class="copyright">
+            <p>Copyright ©2025. All rights reserved | This template is made with <span class="heart">♡</span> by <a href="https://colorlib.com" target="_blank">Colorlib</a></p>
+        </div>
+    </footer>
 
 </body>
 </html>
