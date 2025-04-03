@@ -1,6 +1,6 @@
 import { cart ,addToCard} from "../data/cart.js";
 import {getCategory ,getProducts}from"../data/products.js";
-import { showAlert } from "./alert.js";
+import { showAlert } from "./components.js";
 
 let slideIndex = 1;
 showSlides(slideIndex);
@@ -59,15 +59,21 @@ export function addFavouriteBtn(){
 
 // Categories active to Button on click
 export function addActiveClass(){
-  document.querySelectorAll('.category-btn').forEach(button => button.addEventListener('click', function() {
-    let productGrid = document.getElementById('product-grid');
-    productGrid.innerHTML = '';
+  document.querySelectorAll('.category-btn').forEach(button =>{ button.addEventListener('click', function() {
+ 
+
     document.querySelectorAll('.category-btn').forEach(btn => {
       btn.classList.remove('active');
   });
   this.classList.add('active');
-    getProducts('All');
-  }));
+  });
+
+button.addEventListener('click', function() {
+
+  getProducts(this.textContent);
+})}
+);
+
 }
 
 
@@ -80,7 +86,7 @@ export function addCategoryBtn(element){
   let button =  document.createElement('button');
   button.textContent=element.name;
   button.classList.add('category-btn');
-  
+
  
   categories.appendChild(button);
 }
@@ -201,6 +207,7 @@ export function addcard(element){
     info.appendChild(cart);
 
     card.appendChild(info);
+    
     productGrid.appendChild(card);
   
 }
