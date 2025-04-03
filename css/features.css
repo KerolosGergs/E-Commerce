@@ -135,14 +135,20 @@ nav span {
     border: 1px solid #ddd;
     background-color: #dddddd45;
 }
-
+.cart-actions-container{
+    border: 1px solid #ddd;   
+}
+.coupon-error{
+    color: rgb(221, 5, 5);
+    padding: 0px 0px 5px 30px;
+    display: none;
+}
 /* Cart Actions */
 .cart-actions {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
     padding: 20px 20px;
-    border: 1px solid #ddd;
 }
 
 .cart-actions input {
