@@ -1,0 +1,112 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #fff;
+}
+
+/* Banner Section */
+.banner {
+    position: relative;
+    height: 300px;
+    background-image: url('bg-01.jpg'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.banner h1 {
+    color: #fff;
+    font-size: 4rem;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+/* About Content Section */
+.about-content {
+    padding: 4rem 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0 1rem;
+}
+
+.text-content {
+    width: 60%;
+}
+
+.text-content h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.text-content p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+.contact-info {
+    font-size: 0.9rem;
+    color: #888;
+    margin-top: 2rem;
+}
+
+.image-content {
+    width: 35%;
+    border: 5px solid #ddd;
+    
+}
+
+.image-content img {
+    width: 100%;
+    height: auto;
+    position: relative;
+    left: 15px;
+    bottom: 15px;
+}
+
+.image-content img :hover{
+    
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .text-content, .image-content {
+        width: 100%;
+    }
+
+    .image-content {
+        margin-top: 2rem;
+    }
+
+    .banner h1 {
+        font-size: 2.5rem;
+    }
+}
+.sec2-content img{
+    width: 100%;
+    height: auto;
+    border: 1px solid #ddd;
+}
