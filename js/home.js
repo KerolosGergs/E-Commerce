@@ -1,5 +1,5 @@
 import { cart ,addToCard} from "../data/cart.js";
-import {getCategory ,getProducts}from"../data/products.js";
+import {getCategory ,getProducts ,fetchProducts}from"../data/products.js";
 import { showAlert } from "./components.js";
 
 let slideIndex = 1;
@@ -60,8 +60,6 @@ export function addFavouriteBtn(){
 // Categories active to Button on click
 export function addActiveClass(){
   document.querySelectorAll('.category-btn').forEach(button =>{ button.addEventListener('click', function() {
- 
-
     document.querySelectorAll('.category-btn').forEach(btn => {
       btn.classList.remove('active');
   });
@@ -75,6 +73,24 @@ button.addEventListener('click', function() {
 );
 
 }
+function addActiveBtn(name){
+  document.querySelectorAll('.category-btn').forEach(button =>{ 
+    
+    if(button.textContent !=name)
+    {
+      button.classList.remove('active');
+
+    }
+else{
+  button.classList.add('active');
+
+}
+  });
+
+
+
+  getProducts(this.textContent);
+}
 
 
 
@@ -84,7 +100,7 @@ export function addCategoryBtn(element){
 
   let categories= document.getElementById('categories');
   let button =  document.createElement('button');
-  button.textContent=element.name;
+  button.textContent=element;
   button.classList.add('category-btn');
 
  
@@ -212,13 +228,103 @@ export function addcard(element){
   
 }
 
+async function  CardSection(){
+
+let cardSection = document.getElementById('cardSection');
+cardSection.innerHTML='';
+let products = await fetchProducts();
+
+const groupByCategory = products.reduce((acc, product) => {
+  if (!acc[product.category]) {
+    acc[product.category] = [];
+  }
+  acc[product.category].push(product);
+  return acc;
+}, {});
+
+// Step 2: Pick the first product from each category
+const uniqueCategoryProducts = Object.values(groupByCategory).map(
+  (products) => products[0]
+);
+console.log(uniqueCategoryProducts);
+
+for(let i =0 ;i<4;i++)
+{
+
+  let product= uniqueCategoryProducts[i];
+ const card = document.createElement('div');
+  card.className = 'card';
+
+  // Create and append the image
+  const img = document.createElement('img');
+  img.src = product.images[0] ; 
+  img.alt = product.category;
+  img.className = 'card-img';
+  card.appendChild(img);
+
+  // Create and append the card content
+  const cardContent = document.createElement('div');
+  cardContent.className = 'card-content';
+
+  const title = document.createElement('h3');
+  title.className = 'card-title';
+  title.textContent = product.title ; // Fallback to 'name' if 'title' doesn't exist
+  cardContent.appendChild(title);
+
+  const category = document.createElement('p');
+  category.className = 'card-category';
+  category.textContent = product.category;
+  cardContent.appendChild(category);
+
+  const price = document.createElement('p');
+  price.className = 'card-price';
+  
+  const originalPrice = document.createElement('span');
+  originalPrice.className = 'original-price';
+  originalPrice.textContent = `$${product.price}`;
+  price.appendChild(originalPrice);
+
+  cardContent.appendChild(price);
+  card.appendChild(cardContent);
+
+  // Create and append the overlay
+  const overlay = document.createElement('div');
+  overlay.className = 'card-overlay';
+
+  const overlayTitle = document.createElement('h3');
+  overlayTitle.className = 'overlay-title';
+  overlayTitle.textContent = product.title ;
+  overlay.appendChild(overlayTitle);
+
+  const overlayPrice = document.createElement('p');
+  overlayPrice.className = 'overlay-price';
+  overlayPrice.textContent = `$${product.price}`;
+  overlay.appendChild(overlayPrice);
+
+  const buyNowLink = document.createElement('a');
+  buyNowLink.href = '#product-grid';
+  buyNowLink.className = 'buy-now';
+  buyNowLink.textContent = 'Buy Now';
+  buyNowLink.addEventListener('click', function() {
+    addActiveBtn(product.category);
+  })
+  overlay.appendChild(buyNowLink);
+
+  card.appendChild(overlay);
+
+  // Append the card to the container
+  cardSection.appendChild(card);
+
+}
+
+
+}
 
 
 
 
 
-
-
+CardSection();
 
 getCategory();
 getProducts();
