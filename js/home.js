@@ -7,10 +7,10 @@ showSlides(slideIndex);
 
 // Next/previous controls
 
-document.getElementsByClassName('prev')[0].addEventListener('click', function() {
+document.getElementsByClassName('prev')[0]?.addEventListener('click', function() {
   showSlides(slideIndex-=1);
 });
-document.getElementsByClassName('next')[0].addEventListener('click', function() {
+document.getElementsByClassName('next')[0]?.addEventListener('click', function() {
   showSlides(slideIndex+=1);
 })
 
@@ -33,13 +33,21 @@ function showSlides(n) {
   for (i = 0; i < dots.length; i++) {
     dots[i].className = dots[i].className.replace(" active", "");
   }
-  slides[slideIndex-1].style.display = "block";
+  if (slides.length > 0 && slides[slideIndex-1]) {
+    slides[slideIndex-1].style.display = "block";
   dots[slideIndex-1].className += " active";
+
+}
+  
+  // slides[slideIndex-1].style.display = "block";
 }
 
+document.getElementById('darkMode').addEventListener('click',darkMode);
 
-
-
+export function darkMode(){
+  document.body.classList.toggle('dark-mode');
+  // document.rootElement.
+}
 
 // Favourite button to Card 
 export function addFavouriteBtn(){
@@ -88,8 +96,7 @@ else{
   });
 
 
-
-  getProducts(this.textContent);
+  getProducts(name);
 }
 
 
@@ -125,7 +132,7 @@ export function addcard(element){
 
     // Add To card
     let image = document.createElement('img');
-    image.setAttribute('src',element.images[0]);
+    image.setAttribute('src',element.image);
     image.classList.add('product-img')
     card.appendChild(image);
 
@@ -231,7 +238,7 @@ export function addcard(element){
 async function  CardSection(){
 
 let cardSection = document.getElementById('cardSection');
-cardSection.innerHTML='';
+cardSection.innerHTML ='';
 let products = await fetchProducts();
 
 const groupByCategory = products.reduce((acc, product) => {
@@ -257,7 +264,7 @@ for(let i =0 ;i<4;i++)
 
   // Create and append the image
   const img = document.createElement('img');
-  img.src = product.images[0] ; 
+  img.src = product.image ; 
   img.alt = product.category;
   img.className = 'card-img';
   card.appendChild(img);
@@ -268,23 +275,24 @@ for(let i =0 ;i<4;i++)
 
   const title = document.createElement('h3');
   title.className = 'card-title';
-  title.textContent = product.title ; // Fallback to 'name' if 'title' doesn't exist
+  title.style.textAlign = 'center'; 
+  title.textContent = product.category ; // Fallback to 'name' if 'title' doesn't exist
   cardContent.appendChild(title);
 
-  const category = document.createElement('p');
-  category.className = 'card-category';
-  category.textContent = product.category;
-  cardContent.appendChild(category);
+  // const category = document.createElement('p');
+  // category.className = 'card-category';
+  // category.textContent = product.category;
+  // cardContent.appendChild(category);
 
-  const price = document.createElement('p');
-  price.className = 'card-price';
+  // const price = document.createElement('p');
+  // price.className = 'card-price';
   
-  const originalPrice = document.createElement('span');
-  originalPrice.className = 'original-price';
-  originalPrice.textContent = `$${product.price}`;
-  price.appendChild(originalPrice);
+  // const originalPrice = document.createElement('span');
+  // originalPrice.className = 'original-price';
+  // originalPrice.textContent = `$${product.price}`;
+  // price.appendChild(originalPrice);
 
-  cardContent.appendChild(price);
+  // cardContent.appendChild(price);
   card.appendChild(cardContent);
 
   // Create and append the overlay
@@ -293,16 +301,16 @@ for(let i =0 ;i<4;i++)
 
   const overlayTitle = document.createElement('h3');
   overlayTitle.className = 'overlay-title';
-  overlayTitle.textContent = product.title ;
+  overlayTitle.textContent = product.category ;
   overlay.appendChild(overlayTitle);
 
-  const overlayPrice = document.createElement('p');
-  overlayPrice.className = 'overlay-price';
-  overlayPrice.textContent = `$${product.price}`;
-  overlay.appendChild(overlayPrice);
+  // const overlayPrice = document.createElement('p');
+  // overlayPrice.className = 'overlay-price';
+  // overlayPrice.textContent = `$${product.price}`;
+  // overlay.appendChild(overlayPrice);
 
   const buyNowLink = document.createElement('a');
-  buyNowLink.href = '#product-grid';
+  buyNowLink.href = '#shopNow';
   buyNowLink.className = 'buy-now';
   buyNowLink.textContent = 'Buy Now';
   buyNowLink.addEventListener('click', function() {

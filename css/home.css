@@ -1,9 +1,13 @@
-* {box-sizing:border-box}
+* {
+  margin: 0px ;
+  padding: 0px;
+  box-sizing:border-box
+}
 
 
 :root{
   --primary-color:52, 122, 183;
---secandary-color:#b7347a;
+  --secandary-color:#b7347a;
   --primary: #2d3436;
   --secondary: #636e72;
   --accent: #e84393;
@@ -12,10 +16,28 @@
   --success: #00b894;
   --danger: #d63031;
   --warning: #fdcb6e;
+  --light-bg:#d7dbdc;
+}
+.dark-mode{
+  --primary-color:52, 122, 183;
+  --secandary-color:#b7347a;
+  --primary: #2d3436;
+  --secondary: #636e72;
+  --accent: #e84393;
+  --dark: #f8f9fa;
+  --light: #343a40;
+  --success: #00b894;
+  --danger: #d63031;
+  --warning: #fdcb6e;
+  /* --light-bg:#d7dbdc00; */
 }
 .container{
   margin: auto;
   max-width: 90%;
+}
+body{
+  background-color: var(--light);
+  /* background-color: var(--dark); */
 }
 
 
@@ -26,7 +48,9 @@
   max-width: 100%;
   position: relative;
   margin: auto;
-  background-color: #d7dbdc;
+  background-color: var(--light-bg);
+
+  
 
 }
 .mySlides {
@@ -61,7 +85,7 @@ height: 500px;
   width: auto;
   margin-top: -22px;
   padding: 16px;
-  color: white;
+  color: var(--light);
   font-weight: bold;
   font-size: 18px;
   transition: 0.6s ease;
@@ -77,7 +101,7 @@ height: 500px;
 
 /* On hover, add a black background color with a little bit see-through */
 .prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
+  background-color: var(--dark);
 }
 
 .dot {
@@ -85,14 +109,14 @@ height: 500px;
   height: 15px;
   width: 15px;
   margin: 0 2px;
-  background-color: #bbb;
+  background-color: var(--light-bg);
   border-radius: 50%;
   display: inline-block;
   transition: background-color 0.6s ease;
 }
 
 .active, .dot:hover {
-  background-color: #717171;
+  background-color: var(--dark);
 }
 
 /* Fading animation */
@@ -129,19 +153,23 @@ height: 500px;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0px 4px 8px rgba(0,0,0,.6);
-  /* background-color: rgba(var(--primary-color),.05); */
+  background-color: white;
   position: relative;
-  transition: transform 0.3s ease;
+  transition: transform 0.5s ease;
 }
 
 .wraper-cards .card:hover {
   transform: translateY(-10px);
+  transform: scale(1.1); /* Scale image on hover */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /
 }
 
 .wraper-cards .card-img {
   width: 100%;
   height: 200px;
   object-fit: contain;
+  transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition */
+
 }
 
 .wraper-cards .card-content {
@@ -151,11 +179,11 @@ height: 500px;
 .card-title {
   font-size: 22px;
   margin: 10px 0;
-  color: #333;
+  color: #000000;
 }
 
 .card-text {
-  color: #666;
+  color: var(--dark);
   line-height: 1.5;
   margin-bottom: 15px;
 }
@@ -167,7 +195,7 @@ height: 500px;
   width: 100%;
   height: 100%;
   background:rgba(var(--primary-color),0.6);
-  color: white;
+  color: #ffffff;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -197,7 +225,7 @@ height: 500px;
   display: inline-block;
   padding: 12px 30px;
   background-color: 	var(--secandary-color);
-  color: white;
+  color: var(--light);
   text-decoration: none;
   border-radius: 5px;
   font-weight: bold;
@@ -243,8 +271,8 @@ height: 500px;
 
 .category-btn {
   padding: 8px 16px;
-  background-color: white;
-  border: 1px solid #ddd;
+  background-color: var(--light);
+  border: 1px solid var(--light-bg);
   border-radius: 20px;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -252,7 +280,7 @@ height: 500px;
 
 .category-btn:hover, .category-btn.active {
   background-color: rgb(var(--primary-color));
-  color: white;
+  color: var(--light);
   border-color: rgb(var(--primary-color));
 }
 
@@ -267,7 +295,7 @@ height: 500px;
 
 .search-box input {
   padding: 8px 15px 8px 35px;
-  border: 1px solid #ddd;
+  border: 1px solid var(--light);
   border-radius: 20px;
   width: 200px;
 }
@@ -282,8 +310,8 @@ height: 500px;
 
 .filter-btn {
   padding: 8px 16px;
-  background-color: white;
-  border: 1px solid #ddd;
+  background-color: var(--light);
+  border: 1px solid var(--light-bg);
   border-radius: 20px;
   cursor: pointer;
   display: flex;
@@ -299,7 +327,7 @@ height: 500px;
 }
 
 .product-card {
-  background-color: white;
+  background-color: var(--light);
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 3px 10px rgba(0,0,0,0.08);
@@ -317,7 +345,7 @@ height: 500px;
   top: 10px;
   left: 10px;
   background-color: var(--danger);
-  color: white;
+  color: var(--light);
   padding: 3px 8px;
   border-radius: 3px;
   font-size: 0.8rem;
@@ -328,7 +356,7 @@ height: 500px;
   position: absolute;
   top: 10px;
   right: 10px;
-  background-color: white;
+  background-color: var(--light);
   width: 30px;
   height: 30px;
   border-radius: 50%;
@@ -353,7 +381,7 @@ height: 500px;
 .product-img {
   width: 100%;
   height: 250px;
-  object-fit: cover;
+  /* object-fit: contain; */
   transition: transform 0.5s ease;
   background-color: rgba(var(--primary-color),.05);
 }
@@ -409,7 +437,7 @@ height: 500px;
   width: 30px;
   height: 30px;
   background-color: var(--secondary);
-  color: white;
+  color: var(--light);
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -445,7 +473,7 @@ height: 500px;
   width: 100%;
   padding: 8px;
   background-color: var(--primary);
-  color: white;
+  color: var(--light);
   border: none;
   border-radius: 5px;
   margin-top: 10px;
@@ -470,7 +498,7 @@ height: 500px;
   display: block;
   margin: 0 auto;
   padding: 12px 30px;
-  background-color: white;
+  background-color: var(--light);
   color: var(--primary);
   border: 2px solid var(--secandary-color);
   border-radius: 30px;
@@ -483,7 +511,7 @@ height: 500px;
 
 .load-more:hover {
   background-color: var(--secandary-color);
-  color: white;
+  color: var(--light);
   transform: translateY(-3px);
 }
 

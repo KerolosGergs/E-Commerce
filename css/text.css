@@ -29,12 +29,14 @@
   .text1 p{
   color: #717171; 
   font-size: 40px;
+  padding-bottom: 10px;
   }
   .animate__fadeInRight{
     animation-duration: 1s;
   }
   .text1 h3{
    font-size: 30px;
+   padding-bottom: 10px;
   }
   .animate__wobble{
     animation-duration: 2s;
@@ -48,6 +50,8 @@
     border: none;
     background:#337ab7;
   background: linear-gradient(0deg, #337ab7 0%, #337ab7 100%);
+  padding-bottom: 10px;
+
   }
   .btn-5:hover {
     color: #337ab7;
@@ -92,11 +96,15 @@
     position: absolute;
     top: 20%;
     right: 5%;
+  padding-bottom: 10px;
+
   }
   .text2 p{
   color:rgb(74,60,62); 
   font-size: 40px;
   left: 10px;
+  padding-bottom: 10px;
+
   }
   .animate__rollIn{
     animation-duration: 1s;   
@@ -104,6 +112,8 @@
   .text2 h3{
     font-size: 30px;
     color: #fd9218;
+  padding-bottom: 10px;
+
 }
 .text2 .animate__slideInLeft{
     animation-duration: 2s;
@@ -149,12 +159,16 @@ animation-duration: 2s;
   position: absolute;
   top: 20%;
   right: 5%;
+  padding-bottom: 10px;
   }
 
   .text3 p{
     color:rgb(74,60,62); 
     font-size: 40px;
     left: 10px;
+  padding-bottom: 10px;
+
+    
     }
 .text3 .animate__jackInTheBox{
 animation-duration: 2s;
@@ -163,7 +177,8 @@ animation-duration: 2s;
     .text3 h3{
         font-size: 30px;
         color: #fd9218;
-    }
+        padding-bottom: 10px;
+      }
 
     .text3  .animate__flipInY{
         animation-duration: 2s;
@@ -173,6 +188,8 @@ animation-duration: 2s;
         background:var(--Color-Button);
         border: none;
         z-index: 1;
+        padding-bottom: 10px;
+
       }
       .btn-14:after {
         position: absolute;

@@ -16,7 +16,7 @@ export function addToCard(product,quantity){
      cart.push({
             id:product.id,
             name:product.title,
-            image:product.images[0],
+            image:product.image,
             price:product.price,
             quantity:+quantity,
           })}

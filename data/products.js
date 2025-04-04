@@ -1,36 +1,18 @@
 import {addActiveClass,addCategoryBtn,addFavouriteBtn,addcard}  from '../js/home.js';
 import { showloading ,Hideloading } from '../js/components.js';
+import { addActiveClassShop, addcardShop, addCategoryBtnShop, addFavouriteBtnShop } from '../js/shop.js';
 
-let categories ={
-  data:null,
+ let categories ={
+  data:[],
   timestamp:0
 } ;
-let products ={
-  data:null,
+ let products ={
+  data:[],
   timestamp:0
 };
 
 async function fetchCategory(){
-  // const now = Date.now();
-  // const expiryTime = 5 * 60 * 1000; // 5 minutes
-  // if (categories.data && now - categories.timestamp < expiryTime) {
-  //   return categories.data;
-  // }
-  // try{
-  // let response = await fetch('https://dummyjson.com/products/categories');
-  // if (!response.ok) {
-  //   throw new Error(`Response status: ${response.status}`);
-  // }
-  // let json = await response.json();
-  // categories= {
-  //   data: json,
-  //   timestamp: now
 
-  // }
-  // return json;
-  // }catch(er){
-  //   console.log(er);
-  // }
   const now = Date.now();
   let groupByCategory = await fetchProducts();
    groupByCategory = groupByCategory.reduce((acc, product) => {
@@ -45,8 +27,7 @@ async function fetchCategory(){
       timestamp:now
     }
   return Object.keys(groupByCategory);
-  // groupByCategory = groupByCategory.filter(element=>element.length>0);
-  // console.log(groupByCategory);
+
 
 }
 
@@ -55,13 +36,21 @@ async function fetchCategory(){
 export async function getCategory() {
       
       let json = await fetchCategory();
-      console.log(json);
+      // console.log(json);
       json.forEach(element => {
         addCategoryBtn(element);
       });
       addActiveClass();
     }
-    
+    export async function getCategoryShop() {
+      
+      let json = await fetchCategory();
+      
+      json.forEach(element => {
+        addCategoryBtnShop(element);
+      });
+      addActiveClassShop();
+    }
 
 
 export async function fetchProducts(){
@@ -71,12 +60,14 @@ export async function fetchProducts(){
     return products.data;
   }
   try{
-  let response = await fetch('https://dummyjson.com/products');
+  // let response = await fetch('https://dummyjson.com/products');
+  let response = await fetch('https://fakestoreapi.com/products');
   if (!response.ok) {
     throw new Error(`Response status: ${response.status}`);
   }
   let json = await response.json();
-  json = json.products;
+  console.log(json);
+  // json = json.products;
   products= {
     data: json,
     timestamp: now
@@ -106,6 +97,29 @@ export async function fetchProducts(){
         addcard(element);
       });
       addFavouriteBtn();
+
+     
+ };
+
+
+ export   async function getProductsShop(category) {
+  document.getElementById('product-grid').innerHTML = '';
+  showloading();
+    
+    
+    let data = await fetchProducts();
+    if(data.length!=0){
+      Hideloading();
+    }
+    if(category === 'All' || category === undefined){data = await fetchProducts();}
+    else{
+      data = data.filter(element => element.category === category.toLowerCase());
+
+    }
+    data.forEach(element => {
+        addcardShop(element);
+      });
+      addFavouriteBtnShop();
 
      
  };
