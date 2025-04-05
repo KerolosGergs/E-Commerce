@@ -3,6 +3,9 @@
   padding: 0px;
   box-sizing:border-box
 }
+html{
+  scroll-behavior: smooth;
+}
 
 
 :root{
@@ -117,7 +120,7 @@ input:checked + .slider:before {
 }
 
 .slideshow-container img{
-height: 500px;
+height: 100vh;
 
 }
 
@@ -174,7 +177,7 @@ height: 500px;
 }
 
 .active, .dot:hover {
-  background-color: rgb(var(--primary-color));
+  background-color: white;
 }
 
 /* Fading animation */
@@ -595,6 +598,8 @@ height: 500px;
   .search-box input {
       width: 100%;
   }
+
 }
+
 
  /* End Main */
