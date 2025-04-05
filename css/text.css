@@ -6,6 +6,7 @@
   overflow: hidden;
 }
 
+
 /* Slide Style */
 .mySlides {
   display: none;
@@ -75,6 +76,7 @@
   user-select: none;
   z-index: 3;
 }
+
 
 .prev {
   left: 10px;
