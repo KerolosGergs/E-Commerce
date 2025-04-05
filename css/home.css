@@ -7,7 +7,7 @@
 
 :root{
   --primary-color:52, 122, 183;
-  --secandary-color:#b7347a;
+  --secandary-color:rgb(183, 52, 122);
   --primary: #2d3436;
   --secondary: #636e72;
   --accent: #e84393;
@@ -29,7 +29,7 @@
   --success: #00b894;
   --danger: #d63031;
   --warning: #fdcb6e;
-  /* --light-bg:#d7dbdc00; */
+  --light-bg:#baedf933;
 }
 .container{
   margin: auto;
@@ -40,8 +40,65 @@ body{
   /* background-color: var(--dark); */
 }
 
+.navbar{
+  background-color: var(--light);
+}
+.navbar-logo a{
+  color: var(--dark);
+}
+.navbar-links a {
+  color: var(--dark);
+}
+.hot-label{
+  color: var(--light);
+}
+.icon-item a {
+  color: var(--dark);
+}
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
 
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
 
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--dark);
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: var(--light);
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: rgb(var(--primary-color));
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
 
 /* Slideshow container */
 .slideshow-container {
@@ -63,6 +120,7 @@ body{
 height: 500px;
 
 }
+
 @media (max-width: 768px) {
   .mySlides img {
     width: 150%; /* Increase width to allow clipping */
@@ -109,14 +167,14 @@ height: 500px;
   height: 15px;
   width: 15px;
   margin: 0 2px;
-  background-color: var(--light-bg);
+  background-color: var(--dark);
   border-radius: 50%;
   display: inline-block;
   transition: background-color 0.6s ease;
 }
 
 .active, .dot:hover {
-  background-color: var(--dark);
+  background-color: rgb(var(--primary-color));
 }
 
 /* Fading animation */
@@ -246,12 +304,13 @@ height: 500px;
  .page-header {
   text-align: center;
   margin-bottom: 30px;
+  color: var(--dark);
 }
 
 .page-title {
   font-size: 2.5rem;
   margin-bottom: 10px;
-  color: var(--primary);
+  color: var(--dark);
 }
 
 /* Product Controls */
@@ -276,11 +335,12 @@ height: 500px;
   border-radius: 20px;
   cursor: pointer;
   transition: all 0.3s ease;
+  color: var(--dark);
 }
 
 .category-btn:hover, .category-btn.active {
   background-color: rgb(var(--primary-color));
-  color: var(--light);
+  color: var(--dark);
   border-color: rgb(var(--primary-color));
 }
 
@@ -317,6 +377,7 @@ height: 500px;
   display: flex;
   align-items: center;
   gap: 5px;
+  color: var(--dark);
 }
 
 /* Product Grid */
@@ -356,7 +417,7 @@ height: 500px;
   position: absolute;
   top: 10px;
   right: 10px;
-  background-color: var(--light);
+  background-color: var(--dark);
   width: 30px;
   height: 30px;
   border-radius: 50%;
@@ -401,6 +462,7 @@ height: 500px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  color: var(--dark);
 }
 
 .product-category {
@@ -408,18 +470,21 @@ height: 500px;
   font-size: 0.8rem;
   margin-bottom: 8px;
   display: block;
+  color: var(--dark)  ;
 }
 
 .price-quantity{
   display: flex;
   justify-content: space-between;
   align-items: center;
+  color: var(--dark);
 }
 
 .product-price {
   display: flex;
   align-items: center;
   gap: 10px;
+  color: var(--dark);
 }
 
 .current-price {
@@ -437,7 +502,7 @@ height: 500px;
   width: 30px;
   height: 30px;
   background-color: var(--secondary);
-  color: var(--light);
+  color: #ffffff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -449,7 +514,8 @@ height: 500px;
 }
 
 .quantity-btn:hover {
-  background-color: var(--primary);
+  background-color: var(--dark);
+  color: var(--light);
 }
 
 .quantity-input {
@@ -472,7 +538,7 @@ height: 500px;
 .add-to-cart {
   width: 100%;
   padding: 8px;
-  background-color: var(--primary);
+  background-color: var(--dark);
   color: var(--light);
   border: none;
   border-radius: 5px;
@@ -507,6 +573,7 @@ height: 500px;
   transition: all 0.3s ease;
    margin-top: 20px;
    margin-bottom: 20px;
+   color: var(--dark);
 }
 
 .load-more:hover {
