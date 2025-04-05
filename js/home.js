@@ -42,7 +42,7 @@ function showSlides(n) {
   // slides[slideIndex-1].style.display = "block";
 }
 
-document.getElementById('darkMode').addEventListener('click',darkMode);
+document.getElementById('darkModeToggle').addEventListener('click',darkMode);
 
 export function darkMode(){
   document.body.classList.toggle('dark-mode');

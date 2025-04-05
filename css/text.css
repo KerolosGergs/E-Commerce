@@ -27,7 +27,7 @@
     right: 5%;
   }
   .text1 p{
-  color: #717171; 
+  color: rgb(232 57 76 / 84%); 
   font-size: 40px;
   padding-bottom: 10px;
   }
@@ -163,7 +163,7 @@ animation-duration: 2s;
   }
 
   .text3 p{
-    color:rgb(74,60,62); 
+    color:rgb(171 23 169);; 
     font-size: 40px;
     left: 10px;
   padding-bottom: 10px;
