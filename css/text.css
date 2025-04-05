@@ -1,239 +1,123 @@
-:root{
-    --Color-Button:#337ab7;
+.slideshow-container {
+  position: relative;
+  max-width: 100%;
+  height: 100vh;
+  margin: auto;
+  overflow: hidden;
 }
-.custom-btn {
-    width: 140px;
-    height: 40px;
-    color: #fff;
-    border-radius: 5px;
-    padding: 10px 25px;
-    font-family: 'Lato', sans-serif;
-    font-weight: bold;
-    background: transparent;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    position: relative;
-    display: inline-block;
-     box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
-     7px 7px 20px 0px rgba(0,0,0,.1),
-     4px 4px 5px 0px rgba(0,0,0,.1);
-    outline: none;
-    border-radius: 20px;
-  }
-/* text 1 */
-.text1{
-    position: absolute;
-    top: 20%;
-    right: 5%;
-  }
-  .text1 p{
-  color: rgb(232 57 76 / 84%); 
-  font-size: 40px;
-  padding-bottom: 10px;
-  }
-  .animate__fadeInRight{
-    animation-duration: 1s;
-  }
-  .text1 h3{
-   font-size: 30px;
-   padding-bottom: 10px;
-  }
-  .animate__wobble{
-    animation-duration: 2s;
-  }
- 
-  .btn-5 {
-    width: 130px;
-    height: 40px;
-    line-height: 42px;
-    padding: 0;
-    border: none;
-    background:#337ab7;
-  background: linear-gradient(0deg, #337ab7 0%, #337ab7 100%);
-  padding-bottom: 10px;
-
-  }
-  .btn-5:hover {
-    color: #337ab7;
-    background: transparent;
-     box-shadow:none;
-  }
-  .btn-5:before,
-  .btn-5:after{
-    content:'';
-    position:absolute;
-    top:0;
-    right:0;
-    height:2px;
-    width:0;
-    background: #337ab7;
-    box-shadow:
-     -1px -1px 5px 0px #fff,
-     7px 7px 20px 0px #0003,
-     4px 4px 5px 0px #0002;
-    transition:400ms ease all;
-  }
-  .btn-5:after{
-    right:inherit;
-    top:inherit;
-    left:0;
-    bottom:0;
-  }
-  .btn-5:hover:before,
-  .btn-5:hover:after{
-    width:100%;
-    transition:800ms ease all;
-  }
-  .animate__heartBeat{
-    animation-duration: 1s;
-  }
-  /* End Text 1 */
 
 
-
-  /* start text2 */
-  .text2{
-    position: absolute;
-    top: 20%;
-    right: 5%;
-  padding-bottom: 10px;
-
-  }
-  .text2 p{
-  color:rgb(74,60,62); 
-  font-size: 40px;
-  left: 10px;
-  padding-bottom: 10px;
-
-  }
-  .animate__rollIn{
-    animation-duration: 1s;   
-  }
-  .text2 h3{
-    font-size: 30px;
-    color: #fd9218;
-  padding-bottom: 10px;
-
-}
-.text2 .animate__slideInLeft{
-    animation-duration: 2s;
-}
-.text2 .animate__zoomInUp{
-animation-duration: 2s;
-}
-.btn-10 {
-    background: var(--Color-Button);
-  background: linear-gradient(0deg, var(--Color-Button) 0%, rgba(49,110,244,1) 100%);
-    color: #fff;
-    border: none;
-    transition: all 0.3s ease;
-    overflow: hidden;
-  }
-  .btn-10:after {
-    position: absolute;
-    content: " ";
-    top: 0;
-    left: 0;
-    z-index: -1;
-    width: 100%;
-    height: 100%;
-    transition: all 0.3s ease;
-    -webkit-transform: scale(.1);
-    transform: scale(.1);
-  }
-  .btn-10:hover {
-    color: black;
-    border: none;
-    background: transparent;
-  }
-  .btn-10:hover:after {
-    background: rgb(0,3,255);
-  background: linear-gradient(0deg, rgba(2,126,251,1) 0%,  rgba(0,3,255,1)100%);
-    -webkit-transform: scale(1);
-    transform: scale(1);
-  }
-  /* End text2 */
-
-/* start text3 */
-.text3{
+/* Slide Style */
+.mySlides {
+  display: none;
+  height: 100vh;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right bottom;
   position: absolute;
-  top: 20%;
-  right: 5%;
-  padding-bottom: 10px;
-  }
-
-  .text3 p{
-    color:rgb(171 23 169);; 
-    font-size: 40px;
-    left: 10px;
-  padding-bottom: 10px;
-
-    
-    }
-.text3 .animate__jackInTheBox{
-animation-duration: 2s;
+  width: 100%;
 }
 
-    .text3 h3{
-        font-size: 30px;
-        color: #fd9218;
-        padding-bottom: 10px;
-      }
+/* Text Style Overlay */
+.text1,
+.text2,
+.text3 {
+  position: absolute;
+  top: 50%;
+  left: 8%;
+  transform: translateY(-50%);
+  color: #111;
+  z-index: 2;
+  text-align: left;
+  max-width: 40%;
+}
 
-    .text3  .animate__flipInY{
-        animation-duration: 2s;
-    }
+.text1 p,
+.text2 p,
+.text3 p {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
 
-    .btn-14 {
-        background:var(--Color-Button);
-        border: none;
-        z-index: 1;
-        padding-bottom: 10px;
+.text1 h3,
+.text2 h3,
+.text3 h3 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 10px 0;
+}
 
-      }
-      .btn-14:after {
-        position: absolute;
-        content: "";
-        width: 100%;
-        height: 0;
-        top: 0;
-        left: 0;
-        z-index: -1;
-        border-radius: 5px;
-        background-color: var(--Color-Button);
-        background-image: linear-gradient(315deg, #135a8a 0%, #9ca6fc 74%);
-         box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
-         7px 7px 20px 0px rgba(0,0,0,.1),
-         4px 4px 5px 0px rgba(0,0,0,.1);
-        transition: all 0.3s ease;
-      }
-      .btn-14:hover {
-        color: #000;
-      
-      }
-      .btn-14:hover:after {
-        top: auto;
-        bottom: 0;
-        height: 100%;
-        border-radius: 20px;
-      }
-      .btn-14:active {
-        top: 2px;
-      }
-      .text3 .animate__zoomInLeft {
-        animation-duration: 2s;
-        
-      }
+.mySlides button {
+  margin-top: 20px;
+  padding: 12px 30px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 30px;
+  background-color: #6c63ff;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
 
-      @media (max-width: 768px) {
-        .text1, .text2, .text3{
-          text-align: right;
-        }
-        .text1 p , .text2 p , .text3 p{
-          font-size: 30px;
-        }
+.mySlides button:hover {
+  background-color: #554ff7;
+}
 
-        .text1 h3,.text2 h3,.text3 h3{
-          font-size: 20px;
-        }
-      }
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  padding: 16px;
+  color: #333;
+  font-size: 2rem;
+  transition: 0.3s;
+  user-select: none;
+  z-index: 3;
+}
+
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+.prev:hover,
+.next:hover {
+  color: #000;
+}
+
+/* Dots */
+.mySlides .dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 4px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.mySlides.active,
+.mySlides.dot:hover {
+  background-color: #717171;
+}
+
+/* Animation (fade) */
+.fade {
+  animation-name: fade;
+  animation-duration: 1s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
