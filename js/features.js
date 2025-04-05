@@ -114,3 +114,15 @@ document.querySelector('.apply-coupon').addEventListener('click',function(){
     }
     
 })
+
+//your order has been shipped
+document.querySelector('.checkout').addEventListener('click',function(){
+    let country = document.querySelector('.country');
+    let city = document.querySelector('.city').value;
+    let zip = document.querySelector('.zip').value;
+
+    if(city!=''&& zip!=''){
+        localStorage.removeItem('cart');
+       alert('your order has been shipped');
+    }
+})
