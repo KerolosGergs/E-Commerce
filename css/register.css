@@ -90,6 +90,25 @@ button:hover {
   background-color: #0055cc;
 }
 
+.form-footer {
+  margin-top: 20px;
+  font-size: 14px;
+}
+.register-button {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #333; /* or your brand color */
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.register-button:hover {
+  background-color: #0055cc;
+}
+
 /* Responsive Styles */
 @media (max-width: 768px) {
   .container {
