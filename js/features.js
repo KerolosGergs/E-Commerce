@@ -1,6 +1,7 @@
 import { cart, deleteCartItem,calculateTotalPrice,saveChanges} from "../data/cart.js";
 import { calculateProductPrice } from "./utils/featuresUtils.js";
 
+
 function displayCartItems() {
     let cartItemsHtml = '';
 
@@ -37,6 +38,8 @@ function displayCartItems() {
             deleteCartItem(productId);
             document.querySelector(`.js-product-${productId}`).remove();
             displayTotalPrice();
+            document.querySelector('.counter-cart').textContent = cart.length;
+            
         });
     });
 
@@ -72,6 +75,8 @@ function updateItemTotalPrice(productId) {
 // Ensure displayCartItems runs only after the DOM is loaded
 document.addEventListener('DOMContentLoaded', displayCartItems);
 document.addEventListener('DOMContentLoaded', displayTotalPrice);
+document.addEventListener('DOMContentLoaded', ()=>{
+    document.querySelector('.counter-cart').textContent = cart.length;});
 
 let total =0;
 function displayTotalPrice(){

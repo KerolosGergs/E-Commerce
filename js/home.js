@@ -5,6 +5,8 @@ import { showAlert } from "./components.js";
 
 
 document.addEventListener('DOMContentLoaded', () => {
+  document.querySelector('.counter-cart').textContent = cart.length;
+
   console.log("DOM loaded, checking login status...");
   const loggedInUser = localStorage.getItem('loggedInUser');
   console.log("loggedInUser:", loggedInUser);
@@ -240,23 +242,26 @@ export function addcard(element) {
   });
 
   // add to info
-  let cart = document.createElement("button");
-  cart.classList.add("add-to-cart");
-  cart.classList.add("js-add-to-cart");
-  cart.setAttribute("id", `${element.id}`);
+  let AddCartBtn = document.createElement("button");
+  AddCartBtn.classList.add("add-to-cart");
+  AddCartBtn.classList.add("js-add-to-cart");
+  AddCartBtn.setAttribute("id", `${element.id}`);
   let cartIcon = document.createElement("i");
   cartIcon.classList.add("fas");
   cartIcon.classList.add("fa-shopping-cart");
-  cart.addEventListener("click", function () {
-    debugger;
+  AddCartBtn.addEventListener("click", function () {
+ 
     addToCard(element, input.value);
     input.value = 1;
     showAlert();
+    document.querySelector('.counter-cart').textContent = cart.length;
+
+    
   });
 
-  cart.appendChild(cartIcon);
-  cart.textContent = "Add to Cart";
-  info.appendChild(cart);
+  AddCartBtn.appendChild(cartIcon);
+  AddCartBtn.textContent = "Add to Cart";
+  info.appendChild(AddCartBtn);
 
   card.appendChild(info);
 

@@ -1,3 +1,4 @@
+
 // JavaScript for the responsive navbar
 document.addEventListener('DOMContentLoaded', function() {
     const hamburger = document.querySelector('.hamburger-menu');
@@ -26,4 +27,11 @@ document.addEventListener('DOMContentLoaded', function() {
             navbarLinks.classList.remove('active');
      }
     });
+    document.querySelector('.bracket-icon').addEventListener('click', () => {
+        console.log('hello')
+        localStorage.removeItem('loggedInUser');
+        window.location.href = 'login.html';
+    })
+   
+    
 });
