@@ -126,7 +126,7 @@ document.querySelector('.checkout').addEventListener('click',function(){
     let city = document.querySelector('.city').value;
     let zip = document.querySelector('.zip').value;
 
-    if(city!=''&& zip!=''){
+    if(city!=''&& zip!=''&&cart.length>0){
         localStorage.removeItem('cart');
        alert('your order has been shipped');
     }

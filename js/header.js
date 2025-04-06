@@ -28,8 +28,9 @@ document.addEventListener('DOMContentLoaded', function() {
      }
     });
     document.querySelector('.bracket-icon').addEventListener('click', () => {
-        console.log('hello')
         localStorage.removeItem('loggedInUser');
+        localStorage.removeItem('cart');
+
         window.location.href = 'login.html';
     })
    
