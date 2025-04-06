@@ -2,6 +2,20 @@ import { cart, addToCard } from "../data/cart.js";
 import { getCategory, getProducts, fetchProducts } from "../data/products.js";
 import { showAlert } from "./components.js";
 
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  console.log("DOM loaded, checking login status...");
+  const loggedInUser = localStorage.getItem('loggedInUser');
+  console.log("loggedInUser:", loggedInUser);
+
+  if (!loggedInUser) {
+      console.log("No user logged in, redirecting to login.html");
+      window.location.href = '../login.html';
+  } else {
+      console.log("User is logged in, proceeding with page load");}
+});
+
 let slideIndex = 1;
 showSlides(slideIndex);
 
